@@ -16,5 +16,5 @@ exercise 1.1 done.
 - 26/09/18
 hash tables : Don't think I fully understood how these worked beforehand
 reviewed asymptotic notation. 
-
+read through some advice on answering questions and committed to github
 
