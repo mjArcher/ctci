@@ -3,53 +3,56 @@
 
 #include <stddef.h>
 #include <stdio.h>
-// NULLptr is C++11 only 
+// nullptr is C++11 only 
 
+// do not confuse linked list with stack. Linked list should be capable of inserting or removing a node at any location in the list.
 class Node {
-  Node * next = NULL;
-  int data;
-
   public:
+    Node * next = nullptr;
+    int data;
+
     Node(int d){
       data = d;
     }
 
-  void appendToTail(int d) {
-    Node * end = new Node(d);
-    Node * n = this;
-    while (n->next != NULL){
-      n = n->next;
-    }
-    n->next = end;
-  }
-
-  Node* deleteNode(Node* head, int d){
-    Node * n = head;
-
-    if (n->data == d) {
-      return head->next; // moved head 
-    }
-
-    while (n->next != NULL) {
-      if (n->next->data == d) {
-        n->next = n->next->next;
-        return head; // head didn't change
+    void appendToTail(int d) {
+      Node * end = new Node(d);
+      Node * n = this;
+      while (n->next != NULL){
+        n = n->next;
       }
-      n = n->next;
+      n->next = end;
     }
-    return head;
-  }
 
-  void printAll() {
-    Node * n = this;
+    Node* deleteNode(Node* head, int d){
+      // we need to be able to iterate over all the items
+      Node * n = head;
 
-    while (n->next != NULL) {
+      if (n->data == d) {
+        return head->next; // moved head 
+      }
+
+      while (n->next != nullptr) {
+        if (n->next->data == d) {
+          n->next = n->next->next;
+          return head; // head didn't change
+        }
+        n = n->next;
+      }
+      return head;
+    }
+
+    void printAll() {
+      Node * n = this;
+
+      while (n->next != nullptr) {
+        printf("%d\n", n->data);
+        n = n->next;
+      }
       printf("%d\n", n->data);
-      n = n->next;
-    }
-    printf("%d\n", n->data);
 
-  }
+      delete n;
+    }
 
 };
 #endif

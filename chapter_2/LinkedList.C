@@ -6,7 +6,7 @@ int main(){
   Node * head = new Node(10);
   head->appendToTail(15);
   head->appendToTail(20);
-  head->appendToTail(25);
+  /* head->appendToTail(25); */
 
   // when we're deleting a node of a specific value 'd', there's always a chance we could accidentally delete the head node. 
   // so we need to create a new head when we delete
@@ -14,7 +14,16 @@ int main(){
   // can't we use this?
 
   head->printAll();
-  head = head->deleteNode(head, 20);
-  head->printAll();
+  /* head = head->deleteNode(head, 20); */
+  /* head->printAll(); */
 
+  // clean up and delete everything
+  /* Node * n = head; */
+  /* printf("%d\n", n->data); */
+  /* while (n->next != NULL){ */
+  /*   n = head->deleteNode(n, n->data); */
+  /*   printf("%d\n", n->data); */
+  /* } */
+  delete head->next;
+  delete head;
 }
