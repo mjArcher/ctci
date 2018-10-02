@@ -24,11 +24,12 @@ continued stack implementation
 - 28/09/18
 
 
-- 01/09/18
+- 01/10/18
 Linked list implementation - learnt the distinction between stacks and LLs 
 add or pop at any point. 
 Why would you ever use a linkedlist though?
 The doubly linked list would made the code a lot easier.
 In the example from ctci, they haven't stored a pointer to head or tail: curious!
 
-
+- 02/10/18
+Went over the Singly linked list implementation again.
