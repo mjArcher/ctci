@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST.H
-#define LINKEDLIST.H
+#ifndef LINKEDLISTRECURSIVE.H
+#define LINKEDLISTRECURSIVE.H
 
 #include <stddef.h>
 #include <stdio.h>
@@ -39,7 +39,7 @@ class Node {
       while (n->next != nullptr) {
         if (n->next->data == d) {
           Node * temp = n->next->next;
-          delete n->next;
+          deleteNode(n->next, d);
           n->next = temp;
           return head; // head didn't change
         }

@@ -33,3 +33,9 @@ In the example from ctci, they haven't stored a pointer to head or tail: curious
 
 - 02/10/18
 Went over the Singly linked list implementation again.
+
+- 03/10/18
+Fixed all of the memory leaks I was having with the linkedlist implementation
+Next we need to try to make the function recursive. 
+Next do in reversal of string in place
+
