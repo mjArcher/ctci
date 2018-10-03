@@ -1,11 +1,12 @@
 #include "LinkedList.H"
 #include <stdio.h>
 
-int main(){
+void test_of_linkedlist(){
   printf("Hello world\n"); 
   Node * head = new Node(10);
   head->appendToTail(15);
   head->appendToTail(20);
+  head->appendToTail(25);
   /* head->appendToTail(25); */
 
   // when we're deleting a node of a specific value 'd', there's always a chance we could accidentally delete the head node. 
@@ -13,7 +14,7 @@ int main(){
   //
   // can't we use this?
 
-  head->printAll();
+  /* printAll(head); */
   /* head = head->deleteNode(head, 20); */
   /* head->printAll(); */
 
@@ -24,6 +25,30 @@ int main(){
   /*   n = head->deleteNode(n, n->data); */
   /*   printf("%d\n", n->data); */
   /* } */
-  delete head->next;
+
+  head = head->deleteNode(head, 25);
+  printAll(head);
+  head = head->deleteNode(head, 20);
+  printAll(head);
+  head = head->deleteNode(head, 15);
+  printAll(head);
+  head = head->deleteNode(head, 10);
+  printAll(head);
+  printf("%d", head);
   delete head;
+}
+
+//what happens if we create two pointers with memory
+//and then overwrite one with the other
+void test_of_pointers(){
+  Node* n = new Node(10);
+  Node* n1 = new Node(10);
+  delete n;
+  n = n1;
+  printf("%d", n->data);
+}
+
+int main(){
+  /* test_of_pointers(); */
+  test_of_linkedlist();
 }

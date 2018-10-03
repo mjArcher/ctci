@@ -18,7 +18,7 @@ class Node {
     void appendToTail(int d) {
       Node * end = new Node(d);
       Node * n = this;
-      while (n->next != NULL){
+      while (n->next != nullptr){
         n = n->next;
       }
       n->next = end;
@@ -29,12 +29,18 @@ class Node {
       Node * n = head;
 
       if (n->data == d) {
-        return head->next; // moved head 
+        // I think the memory leak is here
+        Node * temp = n->next;
+        delete head;
+        head=temp;
+        return head; // moved head 
       }
 
       while (n->next != nullptr) {
         if (n->next->data == d) {
-          n->next = n->next->next;
+          Node * temp = n->next->next;
+          delete n->next;
+          n->next = temp;
           return head; // head didn't change
         }
         n = n->next;
@@ -42,17 +48,20 @@ class Node {
       return head;
     }
 
-    void printAll() {
-      Node * n = this;
-
-      while (n->next != nullptr) {
-        printf("%d\n", n->data);
-        n = n->next;
-      }
-      printf("%d\n", n->data);
-
-      delete n;
-    }
 
 };
+
+void printAll(Node* head) {
+  Node * n = head;
+  printf("%c", '\n');
+  if (head == nullptr){
+    printf("null ptr");  
+    return;
+  }
+  while (n->next != nullptr) {
+    printf("%d\n", n->data);
+    n = n->next;
+  }
+  printf("%d\n", n->data);
+}
 #endif

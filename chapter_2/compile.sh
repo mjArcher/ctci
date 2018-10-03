@@ -1,1 +1,1 @@
-g++ --std=c++11 ./LinkedList.C 
+g++ -g --std=c++11 ./LinkedList.C 
