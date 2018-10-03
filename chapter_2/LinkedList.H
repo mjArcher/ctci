@@ -31,9 +31,9 @@ class Node {
       if (n->data == d) {
         // I think the memory leak is here
         Node * temp = n->next;
-        delete head;
-        head=temp;
-        return head; // moved head 
+        delete n;
+        n = temp;
+        return n; // moved head 
       }
 
       while (n->next != nullptr) {
