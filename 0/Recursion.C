@@ -9,7 +9,7 @@ using namespace std;
 // almost got a simple_recursive string here. 
 void simple_recurse(char * pos ) {
     if (*pos != NULL){
-      simple_recurse(++pos);
+      simple_recurse(++pos); //  *(pos = pos + 1 )
       printf("%c", *pos);
     }
     else
@@ -22,4 +22,5 @@ int main() {
   char a_string[] = "this is a string";
   char * a = a_string;
   simple_recurse(a_string);
+  /* printf("%c", *(a++)); */
 }
