@@ -39,3 +39,5 @@ Fixed all of the memory leaks I was having with the linkedlist implementation
 Next we need to try to make the function recursive. 
 Next do in reversal of string in place
 
+- 21/10/18
+Rename dirs 

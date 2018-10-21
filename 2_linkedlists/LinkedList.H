@@ -47,8 +47,6 @@ class Node {
       }
       return head;
     }
-
-
 };
 
 void printAll(Node* head) {

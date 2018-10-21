@@ -8,7 +8,7 @@ using namespace std;
 
 // almost got a simple_recursive string here. 
 void simple_recurse(char * pos ) {
-    if (*pos != NULL){
+    if (*pos != NULL) {
       simple_recurse(++pos); //  *(pos = pos + 1 )
       printf("%c", *pos);
     }
@@ -17,10 +17,10 @@ void simple_recurse(char * pos ) {
 }
 
 // this doesn't 
-  /* printf("%c", *(++a)); // do a pre-increment not a post-increment */
+/* printf("%c", *(++a)); // do a pre-increment not a post-increment */
 int main() {
   char a_string[] = "this is a string";
-  char * a = a_string;
+  char *a = a_string;
   simple_recurse(a_string);
   /* printf("%c", *(a++)); */
 }
